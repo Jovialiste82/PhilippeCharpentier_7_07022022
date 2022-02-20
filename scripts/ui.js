@@ -1,4 +1,16 @@
 export default class UI {
+  static displayTestIngredients(array) {
+    // add ingredients to Select options
+    const itemsContainer = document.querySelector(".test-items-container");
+    itemsContainer.innerText = "";
+
+    array.forEach((item) => {
+      const ingredient = document.createElement("span");
+      ingredient.innerText = item;
+      itemsContainer.appendChild(ingredient);
+    });
+  }
+
   static displayIngredients(array) {
     // add ingredients to Select options
   }

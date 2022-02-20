@@ -9,12 +9,12 @@ const getRecipes = async () => {
   const data = await res.json();
 
   // Store data in Local Storage
-  if (localStorage.getItem("data") == null) {
-    localStorage.setItem("data", JSON.stringify(data));
+  if (localStorage.getItem("recipes") == null) {
+    localStorage.setItem("recipes", JSON.stringify(data));
   }
 
   return {
-    data: JSON.parse(localStorage.getItem("data")),
+    data: JSON.parse(localStorage.getItem("recipes")),
   };
 };
 
@@ -22,15 +22,33 @@ async function init() {
   // Fetch recipes from Local Storage - Array of Objects
   const { data } = await getRecipes();
   UI.displayRecipes(data);
-  // get input field from DOM
-  const searchInput = document.getElementById("main-search");
+
+  // get main input field from DOM
+  const mainSearchInput = document.getElementById("main-search");
+
+  // get Ingredients input field from DOM
+  const ingredientsSearchInput = document.getElementById("ingredients");
+
+  // Fill Ingredients search options
+  const filteredIngredientsOptions = filters.updateIngredientsField(data);
+  console.log(filteredIngredientsOptions);
+  UI.displayTestIngredients(filteredIngredientsOptions);
+
+  // get Appliance input field from DOM
+  const appliancesSearchInput = document.getElementById("appliances");
+
+  // get Ustensils input field from DOM
+  const ustensilsSearchInput = document.getElementById("ustensils");
+
   // Input search Event Listener
-  searchInput.addEventListener("input", (e) => {
+  mainSearchInput.addEventListener("input", (e) => {
     const value = e.target.value.toString().toLowerCase();
     // disable search if input is less than 3 characters
     // and display all recipes
     if (value.length < 3) {
       UI.displayRecipes(data);
+      const filteredIngredientsOptions = filters.updateIngredientsField(data);
+      UI.displayTestIngredients(filteredIngredientsOptions);
     } else {
       // Input search Algo
       const filteredRecipes = data.filter((recipe) => {
@@ -47,19 +65,23 @@ async function init() {
       });
       console.log("------------- End --------------");
       console.log(filteredRecipes);
+      localStorage.setItem("recipes2", JSON.stringify(filteredRecipes));
       UI.displayRecipes(filteredRecipes);
 
       // Update Ingredients options
       const filteredIngredientsOptions =
-        filters.createIngredientsArray(filteredRecipes);
+        filters.updateIngredientsField(filteredRecipes);
+
+      console.log(filteredIngredientsOptions);
+      UI.displayTestIngredients(filteredIngredientsOptions);
 
       // Update Appliances options
       const filteredAppliancesOptions =
-        filters.createAppliancesArray(filteredRecipes);
+        filters.updateAppliancesField(filteredRecipes);
 
       // Update Ustensils options
       const filteredUstensilsOptions =
-        filters.createUstensilsArray(filteredRecipes);
+        filters.updateUstensilsField(filteredRecipes);
     }
   });
 }

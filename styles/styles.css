@@ -82,6 +82,54 @@ h1 {
   background: #ed6454;
 }
 
+.test-container {
+  background: #3282f7;
+  border-radius: 5px;
+  min-width: 120px;
+  margin-right: 10px;
+  color: #fff;
+}
+
+#test {
+  width: calc(100% - 16px);
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  text-align: left;
+  position: relative;
+  border: none;
+  background: #3282f7;
+  z-index: 10;
+}
+
+#test::placeholder {
+  color: #fff;
+}
+
+.test-items-container {
+  display: none;
+}
+
+#test:focus {
+  outline: none;
+}
+
+#test:focus + .test-items-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.search-section {
+  position: relative;
+}
+
+.filters-group {
+  position: absolute;
+  top: 60px;
+  left: 0;
+}
+
 /* //////////////////////////////////
 ///// Recipes List Section ///////
 ////////////////////////////////// */
@@ -90,6 +138,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 50px;
+  margin-top: 90px;
 }
 
 .recipe-card {

@@ -1,25 +1,49 @@
-export const createIngredientsArray = (array) => {
-  // get array of arrays of ingredients objects [[{}, {}],[{}, {}]]
-  const array1 = array.map((recipe) => recipe.ingredients);
-  const getIngredientStrings = (object) => object.ingredient;
+export const updateIngredientsField = (array) => {
+  // Fetch from Local Storage ???
+  // const recipes =
+  //   localStorage.getItem("recipes2") == null
+  //     ? JSON.parse(localStorage.getItem("recipes"))
+  //     : JSON.parse(localStorage.getItem("recipes2"));
+
+  // get array of ingredient objects
+  const array1 = array.map((recipe) => recipe.ingredients).flat();
 
   // get array of ingredient strings
-  const array2 = array1.map((array) =>
-    array.forEach((element) => getIngredientStrings(element))
-  );
+  const array2 = array1.map((object) => object.ingredient);
+
+  // Remove duplicates
+  const array3 = [...new Set(array2)];
+  console.log("Ingredients");
+  console.log(array3);
 
   // return array of unique ingredients
-  return [];
+  return array3;
 };
 
-export const createAppliancesArray = (array) => {
+export const updateAppliancesField = (array) => {
+  // get array of Appliances
+  const array1 = array.map((recipe) => recipe.appliance);
+
+  // Remove duplicates
+  const array2 = [...new Set(array1)];
+  console.log("Appliances");
+  console.log(array2);
+
   // return array of unique Appliances
-  return [];
+  return array2;
 };
 
-export const createUstensilsArray = (array) => {
+export const updateUstensilsField = (array) => {
+  // get array of Ustensils strings
+  const array1 = array.map((recipe) => recipe.ustensils).flat();
+
+  // Remove duplicates
+  const array2 = [...new Set(array1)];
+  console.log("Ustensils");
+  console.log(array2);
+
   // return array of unique Ustensils
-  return [];
+  return array2;
 };
 
 export const filterByIngredients = (array) => {
