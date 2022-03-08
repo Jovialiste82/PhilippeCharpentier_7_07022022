@@ -1,7 +1,9 @@
 export default class UI {
   static displayTestIngredients(array) {
     // add ingredients to Select options
-    const itemsContainer = document.querySelector(".test-items-container");
+    const itemsContainer = document.querySelector(
+      ".ingredients-items-container"
+    );
     itemsContainer.innerText = "";
 
     array.forEach((item) => {
@@ -13,14 +15,44 @@ export default class UI {
 
   static displayIngredients(array) {
     // add ingredients to Select options
+    const ingredientsContainer = document.querySelector(
+      ".ingredients-items-container"
+    );
+    ingredientsContainer.innerText = "";
+
+    array.forEach((item) => {
+      const ingredient = document.createElement("span");
+      ingredient.innerText = item;
+      ingredientsContainer.appendChild(ingredient);
+    });
   }
 
-  static displayUstensils(array) {
-    // add ustensils to Select options
+  static displayAppliances(array) {
+    // add Appliances to Select options
+    const appliancesContainer = document.querySelector(
+      ".appliances-items-container"
+    );
+    appliancesContainer.innerText = "";
+
+    array.forEach((item) => {
+      const appliance = document.createElement("span");
+      appliance.innerText = item;
+      appliancesContainer.appendChild(appliance);
+    });
   }
 
   static displayUstensils(array) {
     // add ustensils to select options
+    const ustensilsContainer = document.querySelector(
+      ".ustensils-items-container"
+    );
+    ustensilsContainer.innerText = "";
+
+    array.forEach((item) => {
+      const ustensil = document.createElement("span");
+      ustensil.innerText = item;
+      ustensilsContainer.appendChild(ustensil);
+    });
   }
 
   static createRecipeCard(object) {

@@ -26,14 +26,18 @@
           placeholder="Rechercher une recette"
         />
         <div class="filters-group">
-          <!-- <input id="ingredients" class="filters" value="Ingrédients" /> -->
-
-          <div class="test-container">
-            <input id="test" class="filters" placeholder="Ingrédients" />
-            <div class="test-items-container"></div>
+          <div class="advanced-filters-container afc-ingredients">
+            <input id="ingredients" class="filters" placeholder="Ingrédients" />
+            <div class="ingredients-items-container d-none"></div>
           </div>
-          <input id="appliances" class="filters" value="Appareils" />
-          <input id="ustensils" class="filters" value="Ustensiles" />
+          <div class="advanced-filters-container afc-appliances">
+            <input id="appliances" class="filters" placeholder="Appareils" />
+            <div class="appliances-items-container d-none"></div>
+          </div>
+          <div class="advanced-filters-container afc-ustensils">
+            <input id="ustensils" class="filters" placeholder="Ustensiles" />
+            <div class="ustensils-items-container d-none"></div>
+          </div>
         </div>
       </section>
       <section class="recipes-list mt-2"></section>

@@ -26,19 +26,21 @@ async function init() {
   // get main input field from DOM
   const mainSearchInput = document.getElementById("main-search");
 
-  // get Ingredients input field from DOM
+  // get Advanced Filters input fields from DOM
   const ingredientsSearchInput = document.getElementById("ingredients");
+  const appliancesSearchInput = document.getElementById("appliances");
+  const ustensilsSearchInput = document.getElementById("ustensils");
 
   // Fill Ingredients search options
   const filteredIngredientsOptions = filters.updateIngredientsField(data);
+  const filteredAppliancesOptions = filters.updateAppliancesField(data);
+  const filteredUstensilsOptions = filters.updateUstensilsField(data);
   console.log(filteredIngredientsOptions);
-  UI.displayTestIngredients(filteredIngredientsOptions);
-
-  // get Appliance input field from DOM
-  const appliancesSearchInput = document.getElementById("appliances");
-
-  // get Ustensils input field from DOM
-  const ustensilsSearchInput = document.getElementById("ustensils");
+  console.log(filteredAppliancesOptions);
+  console.log(filteredUstensilsOptions);
+  UI.displayIngredients(filteredIngredientsOptions);
+  UI.displayAppliances(filteredAppliancesOptions);
+  UI.displayUstensils(filteredUstensilsOptions);
 
   // Input search Event Listener
   mainSearchInput.addEventListener("input", (e) => {
@@ -48,7 +50,11 @@ async function init() {
     if (value.length < 3) {
       UI.displayRecipes(data);
       const filteredIngredientsOptions = filters.updateIngredientsField(data);
-      UI.displayTestIngredients(filteredIngredientsOptions);
+      const filteredAppliancesOptions = filters.updateAppliancesField(data);
+      const filteredUstensilsOptions = filters.updateUstensilsField(data);
+      UI.displayIngredients(filteredIngredientsOptions);
+      UI.displayAppliances(filteredAppliancesOptions);
+      UI.displayUstensils(filteredUstensilsOptions);
     } else {
       // Input search Algo
       const filteredRecipes = data.filter((recipe) => {
@@ -64,24 +70,24 @@ async function init() {
         }
       });
       console.log("------------- End --------------");
-      console.log(filteredRecipes);
+      console.table(filteredRecipes);
+
       localStorage.setItem("recipes2", JSON.stringify(filteredRecipes));
       UI.displayRecipes(filteredRecipes);
 
-      // Update Ingredients options
+      // Update options for Ingredient + Appliances + Ustensils
       const filteredIngredientsOptions =
         filters.updateIngredientsField(filteredRecipes);
-
-      console.log(filteredIngredientsOptions);
-      UI.displayTestIngredients(filteredIngredientsOptions);
-
-      // Update Appliances options
       const filteredAppliancesOptions =
         filters.updateAppliancesField(filteredRecipes);
-
-      // Update Ustensils options
       const filteredUstensilsOptions =
         filters.updateUstensilsField(filteredRecipes);
+
+      // Update UI for Ingredient + Appliances + Ustensils options
+      console.log(filteredIngredientsOptions);
+      UI.displayIngredients(filteredIngredientsOptions);
+      UI.displayAppliances(filteredAppliancesOptions);
+      UI.displayUstensils(filteredUstensilsOptions);
     }
   });
 }
