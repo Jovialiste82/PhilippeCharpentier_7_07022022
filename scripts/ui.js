@@ -62,11 +62,15 @@ export default class UI {
     const header = document.createElement("header");
     const headerH2 = document.createElement("h3");
     const headerP = document.createElement("p");
+    const img = document.createElement("img");
     const cardBottomDiv = document.createElement("div");
     const ingredientsDiv = document.createElement("div");
     const descriptionDiv = document.createElement("div");
+    img.setAttribute("src", object.url);
+    img.setAttribute("alt", object.name);
     article.classList.add("recipe-card");
     imgDiv.classList.add("card-img");
+    imgDiv.appendChild(img);
     cardTextDiv.classList.add("card-text-body");
     header.classList.add("card-body-text-header");
     cardBottomDiv.classList.add("card-bottom");

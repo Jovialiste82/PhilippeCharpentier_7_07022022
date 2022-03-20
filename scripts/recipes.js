@@ -2,6 +2,7 @@ const recipes = [
   {
     id: 1,
     name: "Limonade de Coco",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725601/OC-P7-Assets/limonade-de-coco_ooswlx.jpg",
     servings: 1,
     ingredients: [
       {
@@ -36,6 +37,7 @@ const recipes = [
   {
     id: 2,
     name: "Poisson Cru à la tahitienne",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725605/OC-P7-Assets/poisson-cru-a-la-tahitienne_qjb608.jpg",
     servings: 2,
     ingredients: [
       {
@@ -74,6 +76,7 @@ const recipes = [
   {
     id: 3,
     name: "Poulet coco réunionnais",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725602/OC-P7-Assets/poulet-coco-reunionnais_tslpbz.jpg",
     servings: 4,
     ingredients: [
       {
@@ -113,6 +116,7 @@ const recipes = [
   {
     id: 4,
     name: "Salade de riz",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725600/OC-P7-Assets/salade-de-riz_aemasx.jpg",
     servings: 4,
     ingredients: [
       {
@@ -153,6 +157,7 @@ const recipes = [
   {
     id: 5,
     name: "Tarte au thon",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725600/OC-P7-Assets/tarte-au-thon_avmftj.jpg",
     servings: 4,
     ingredients: [
       {
@@ -193,6 +198,7 @@ const recipes = [
   {
     id: 6,
     name: "Tarte aux pommes",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725633/OC-P7-Assets/tarte-aux-pommes_kfv5uv.jpg",
     servings: 6,
     ingredients: [
       {
@@ -232,6 +238,7 @@ const recipes = [
   {
     id: 7,
     name: "Tartelettes au chocolat et aux fraises",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725594/OC-P7-Assets/tartelette-au-chocolat-et-aux-fraises_pihwth.jpg",
     servings: 6,
     ingredients: [
       {
@@ -267,6 +274,7 @@ const recipes = [
   {
     id: 8,
     name: "Brownie",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725591/OC-P7-Assets/brownie_jwbnyl.jpg",
     servings: 10,
     ingredients: [
       {
@@ -308,6 +316,7 @@ const recipes = [
   {
     id: 9,
     name: "Salade Méditerannéene fraiche au chèvre",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725591/OC-P7-Assets/salade-mediterraneene-fraiche-au-chevre_l1ncw6.jpg",
     servings: 4,
     ingredients: [
       {
@@ -341,6 +350,7 @@ const recipes = [
   {
     id: 10,
     name: "Tartiflette",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725576/OC-P7-Assets/tartiflette_sutt28.jpg",
     servings: 4,
     ingredients: [
       {
@@ -377,6 +387,7 @@ const recipes = [
   {
     id: 11,
     name: "Salade tomate, mozzarella et pommes",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725599/OC-P7-Assets/salade-tomate-mozzarella-pommes_cyzmgy.jpg",
     servings: 4,
     ingredients: [
       {
@@ -417,6 +428,7 @@ const recipes = [
   {
     id: 12,
     name: "Compote pomme rhubarbe",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725585/OC-P7-Assets/compote-pomme-rhubarbe_pfr67s.jpg",
     servings: 4,
     ingredients: [
       {
@@ -448,6 +460,7 @@ const recipes = [
   {
     id: 13,
     name: "Salade mâchée de patates",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725585/OC-P7-Assets/salade-machee-de-patates_uxityi.jpg",
     servings: 2,
     ingredients: [
       {
@@ -484,6 +497,7 @@ const recipes = [
   {
     id: 14,
     name: "Galette Bretonne Saucisse et Fromage à raclette",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725585/OC-P7-Assets/galette-bretonne-saucisse-et-fromage-a-raclette_gyma2c.jpg",
     servings: 2,
     ingredients: [
       {
@@ -523,6 +537,7 @@ const recipes = [
   {
     id: 15,
     name: "Crêpes Chocolat Banane",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725586/OC-P7-Assets/crepes-chocolat-banane_p4fx4v.jpg",
     servings: 10,
     ingredients: [
       {
@@ -563,6 +578,7 @@ const recipes = [
   {
     id: 16,
     name: "Gratin de pâtes à la tomate",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725583/OC-P7-Assets/gratin-de-pates-a-la-tomate_bckeyp.jpg",
     servings: 2,
     ingredients: [
       {
@@ -600,6 +616,7 @@ const recipes = [
   {
     id: 17,
     name: "Smoothie à la fraise",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725580/OC-P7-Assets/smoothie-a-la-fraise_bzunoe.jpg",
     servings: 6,
     ingredients: [
       {
@@ -633,6 +650,7 @@ const recipes = [
   {
     id: 18,
     name: "Smoothie ananas et vanille",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725583/OC-P7-Assets/smoothie-ananas-vanille_x5m121.jpg",
     servings: 5,
     ingredients: [
       {
@@ -659,6 +677,7 @@ const recipes = [
   {
     id: 19,
     name: "Shake Banane Kiwi",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725577/OC-P7-Assets/shake-banane-kiwi_vcqrui.jpg",
     servings: 4,
     ingredients: [
       {
@@ -693,6 +712,7 @@ const recipes = [
   {
     id: 20,
     name: "Pates Carbonara",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725585/OC-P7-Assets/pates-carbonara_dcqgbo.jpg",
     servings: 5,
     ingredients: [
       {
@@ -730,6 +750,7 @@ const recipes = [
   {
     id: 21,
     name: "Spaghettis à la bolognaise",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725620/OC-P7-Assets/spaghettis-a-la-bolognaise_e5pdvz.jpg",
     servings: 4,
     ingredients: [
       {
@@ -771,6 +792,7 @@ const recipes = [
   {
     id: 22,
     name: "Fondant au chocolat",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725572/OC-P7-Assets/fondant-au-chocolat_m9fudm.jpg",
     servings: 4,
     ingredients: [
       {
@@ -807,6 +829,7 @@ const recipes = [
   {
     id: 23,
     name: "Quiche lorraine",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725571/OC-P7-Assets/quiche-lorraine_eisglz.jpg",
     servings: 4,
     ingredients: [
       {
@@ -848,6 +871,7 @@ const recipes = [
   {
     id: 24,
     name: "Salade de pâtes",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725583/OC-P7-Assets/salade-de-pates_mfeqls.jpg",
     servings: 4,
     ingredients: [
       {
@@ -888,6 +912,7 @@ const recipes = [
   {
     id: 25,
     name: "Cookies",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725572/OC-P7-Assets/cookies_ehmir8.jpg",
     servings: 4,
     ingredients: [
       {
@@ -924,6 +949,7 @@ const recipes = [
   {
     id: 26,
     name: "Soupe de tomates",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725565/OC-P7-Assets/soupe-de-tomates_v1u6s3.jpg",
     servings: 2,
     ingredients: [
       {
@@ -956,6 +982,7 @@ const recipes = [
   {
     id: 27,
     name: "Soupe à l'oseille",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725572/OC-P7-Assets/soupe-a-l-oseille_m7qbmr.jpg",
     servings: 4,
     ingredients: [
       {
@@ -991,6 +1018,7 @@ const recipes = [
   {
     id: 28,
     name: "Soupe de poireaux",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725573/OC-P7-Assets/soupe-de-poireaux_rj9te7.jpg",
     servings: 4,
     ingredients: [
       {
@@ -1027,6 +1055,7 @@ const recipes = [
   {
     id: 29,
     name: "Houmous Express",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725568/OC-P7-Assets/houmous-express_jc33a4.jpg",
     servings: 2,
     ingredients: [
       {
@@ -1059,6 +1088,7 @@ const recipes = [
   {
     id: 30,
     name: "Purée de pois cassés",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725559/OC-P7-Assets/puree-de-pois-casses_sqskfn.jpg",
     servings: 4,
     ingredients: [
       {
@@ -1085,6 +1115,7 @@ const recipes = [
   {
     id: 31,
     name: "Jardinière de légumes",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725550/OC-P7-Assets/jardiniere-de-legumes_pmzzxx.jpg",
     servings: 4,
     ingredients: [
       {
@@ -1120,6 +1151,7 @@ const recipes = [
   {
     id: 32,
     name: "Croque Monsieur à la dinde",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725552/OC-P7-Assets/croque-monsieur-a-la-dinde_nivup1.jpg",
     servings: 4,
     ingredients: [
       {
@@ -1162,6 +1194,7 @@ const recipes = [
   {
     id: 33,
     name: "Sandwich au saumon fumé",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725554/OC-P7-Assets/sandwich-au-saumon-fume_fyb9nn.jpg",
     servings: 4,
     ingredients: [
       {
@@ -1198,6 +1231,7 @@ const recipes = [
   {
     id: 34,
     name: "Purée de patate douce",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725556/OC-P7-Assets/puree-de-patate-douce_vpnjrc.jpg",
     servings: 4,
     ingredients: [
       {
@@ -1227,6 +1261,7 @@ const recipes = [
   {
     id: 35,
     name: "Purée de carottes",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725557/OC-P7-Assets/puree-de-carottes_tedls2.jpg",
     servings: 2,
     ingredients: [
       {
@@ -1267,6 +1302,7 @@ const recipes = [
   {
     id: 36,
     name: "Lasagne Courgettes et Chèvre",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725550/OC-P7-Assets/lasagne-courgettes-et-chevre_xf5vcs.jpg",
     servings: 2,
     ingredients: [
       {
@@ -1307,6 +1343,7 @@ const recipes = [
   {
     id: 37,
     name: "Courgettes farcies au boeuf",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725565/OC-P7-Assets/courgettes-farcies-au-boeuf_jkcgex.jpg",
     servings: 2,
     ingredients: [
       {
@@ -1347,6 +1384,7 @@ const recipes = [
   {
     id: 38,
     name: "Pain Perdu",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725635/OC-P7-Assets/pain-perdu_rp73x0.jpg",
     servings: 4,
     ingredients: [
       {
@@ -1378,6 +1416,7 @@ const recipes = [
   {
     id: 39,
     name: "Crumble aux pommes",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725564/OC-P7-Assets/crumble-aux-pommes_mwjfbr.jpg",
     servings: 40,
     ingredients: [
       {
@@ -1409,6 +1448,7 @@ const recipes = [
   {
     id: 40,
     name: "Limonade",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725559/OC-P7-Assets/limonade_hapbx6.jpg",
     servings: 4,
     ingredients: [
       {
@@ -1440,6 +1480,7 @@ const recipes = [
   {
     id: 41,
     name: "Mousse au chocolat",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725557/OC-P7-Assets/mousse-au-chocolat_jfrdjk.jpg",
     servings: 4,
     ingredients: [
       {
@@ -1466,6 +1507,7 @@ const recipes = [
   {
     id: 42,
     name: "Charlotte au poires",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725563/OC-P7-Assets/charlotte-aux-poires_fck5lq.jpg",
     servings: 3,
     ingredients: [
       {
@@ -1496,6 +1538,7 @@ const recipes = [
   {
     id: 43,
     name: "Tarte au citron",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725608/OC-P7-Assets/tarte-au-citron_jgtkvz.jpg",
     servings: 6,
     ingredients: [
       {
@@ -1530,6 +1573,7 @@ const recipes = [
   {
     id: 44,
     name: "Crème déssert au chocolat",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725557/OC-P7-Assets/creme-dessert-au-chocolat_avvotq.jpg",
     servings: 6,
     ingredients: [
       {
@@ -1567,6 +1611,7 @@ const recipes = [
   {
     id: 45,
     name: "Crème patissière",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725551/OC-P7-Assets/creme-patissiere_bexpje.jpg",
     servings: 8,
     ingredients: [
       {
@@ -1598,6 +1643,7 @@ const recipes = [
   {
     id: 46,
     name: "Far breton",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725559/OC-P7-Assets/far-breton_wdaiym.jpg",
     servings: 6,
     ingredients: [
       {
@@ -1639,6 +1685,7 @@ const recipes = [
   {
     id: 47,
     name: "Mousse au citron",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725570/OC-P7-Assets/mousse-au-citron_gwcw5p.jpg",
     servings: 6,
     ingredients: [
       {
@@ -1671,6 +1718,7 @@ const recipes = [
   {
     id: 48,
     name: "Pizza",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725550/OC-P7-Assets/pizza_ouwagi.jpg",
     servings: 4,
     ingredients: [
       {
@@ -1707,6 +1755,7 @@ const recipes = [
   {
     id: 49,
     name: "Smoothie tropical",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725606/OC-P7-Assets/smoothie-tropical_uzmnnf.jpg",
     servings: 4,
     ingredients: [
       {
@@ -1741,6 +1790,7 @@ const recipes = [
   {
     id: 50,
     name: "Frangipane",
+    url: "https://res.cloudinary.com/dao8tng7z/image/upload/v1647725605/OC-P7-Assets/frangipane_ij9ztd.jpg",
     servings: 2,
     ingredients: [
       {
