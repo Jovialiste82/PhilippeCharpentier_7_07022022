@@ -110,7 +110,35 @@ h1 {
 .afc-appliances:focus-within,
 .afc-ustensils:focus-within {
   outline: none;
-  max-height: none;
+  max-height: 300px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.afc-ingredients:focus-within::-webkit-scrollbar,
+.afc-appliances:focus-within::-webkit-scrollbar,
+.afc-ustensils:focus-within::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 0 5px 5px 0;
+}
+
+.afc-ingredients:focus-within::-webkit-scrollbar {
+  background: var(--main-blue);
+}
+
+.afc-appliances:focus-within::-webkit-scrollbar {
+  background: var(--main-green);
+}
+
+.afc-ustensils:focus-within::-webkit-scrollbar {
+  background: var(--main-red);
+}
+
+.afc-ingredients:focus-within::-webkit-scrollbar-thumb,
+.afc-appliances:focus-within::-webkit-scrollbar-thumb,
+.afc-ustensils:focus-within::-webkit-scrollbar-thumb {
+  background: var(--bg-light-gray-1);
+  border-radius: 0 5px 5px 0;
 }
 
 #ingredients:focus + .ingredients-items-container,
