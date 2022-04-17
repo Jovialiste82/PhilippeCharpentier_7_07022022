@@ -10,8 +10,14 @@
   </head>
   <body>
     <header class="main-header">
+      <!-- <img
+        src="assets/LesPetitsPlats4.png" 
+        alt="logo"
+        width="80"
+        style="color: #d04f4f"
+      /> -->
       <img
-        src="assets/LesPetitsPlats4.png"
+        src="https://res.cloudinary.com/dao8tng7z/image/upload/v1647725671/OC-P7-Assets/main-logo-les-petits-plats_omobhd.png"
         alt="logo"
         width="80"
         style="color: #d04f4f"
@@ -25,10 +31,33 @@
           type="text"
           placeholder="Rechercher une recette"
         />
-        <div class="filters-group mt-2">
-          <input id="ingredients" class="filters" value="Ingrédients" />
-          <input id="appliances" class="filters" value="Appareils" />
-          <input id="ustensils" class="filters" value="Ustensiles" />
+        <div class="tags-container">
+          <!-- <div class="tag">
+            <div class="tag-wrapper">
+              <div class="tag-name">Coco</div>
+              <div class="tag-close">x</div>
+            </div>
+          </div> -->
+        </div>
+        <div class="filters-group-relative mt-2">
+          <div class="filters-group">
+            <div class="advanced-filters-container afc-ingredients">
+              <input
+                id="ingredients"
+                class="filters"
+                placeholder="Ingrédients"
+              />
+              <div class="ingredients-items-container d-none"></div>
+            </div>
+            <div class="advanced-filters-container afc-appliances">
+              <input id="appliances" class="filters" placeholder="Appareils" />
+              <div class="appliances-items-container d-none"></div>
+            </div>
+            <div class="advanced-filters-container afc-ustensils">
+              <input id="ustensils" class="filters" placeholder="Ustensiles" />
+              <div class="ustensils-items-container d-none"></div>
+            </div>
+          </div>
         </div>
       </section>
       <section class="recipes-list mt-2"></section>
