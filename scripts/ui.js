@@ -1,56 +1,95 @@
 export default class UI {
-  static displayTestIngredients(array) {
-    // add ingredients to Select options
-    const itemsContainer = document.querySelector(
-      ".ingredients-items-container"
-    );
-    itemsContainer.innerText = "";
-
-    array.forEach((item) => {
-      const ingredient = document.createElement("span");
-      ingredient.innerText = item;
-      itemsContainer.appendChild(ingredient);
-    });
-  }
-
-  static displayIngredients(array) {
+  static displayIngredients(
+    ingredientsArray,
+    processTags,
+    updateAdvancedFilters
+  ) {
     // add ingredients to Select options
     const ingredientsContainer = document.querySelector(
       ".ingredients-items-container"
     );
     ingredientsContainer.innerText = "";
 
-    array.forEach((item) => {
+    ingredientsArray.forEach((item) => {
       const ingredient = document.createElement("span");
       ingredient.innerText = item;
+      ingredient.classList.add("tags-options");
+      ingredient.classList.add("ingredient-option");
+      ingredient.addEventListener("mousedown", (e) => {
+        const tagsContainer = document.querySelector(".tags-container");
+        const newTag = UI.createTag(
+          e.target.innerText,
+          "ingredient-tag",
+          processTags,
+          updateAdvancedFilters
+        );
+        tagsContainer.appendChild(newTag);
+        const recipes = processTags();
+        updateAdvancedFilters();
+        UI.displayRecipes(recipes);
+      });
       ingredientsContainer.appendChild(ingredient);
     });
   }
 
-  static displayAppliances(array) {
+  static displayAppliances(
+    appliancesArray,
+    processTags,
+    updateAdvancedFilters
+  ) {
     // add Appliances to Select options
     const appliancesContainer = document.querySelector(
       ".appliances-items-container"
     );
     appliancesContainer.innerText = "";
 
-    array.forEach((item) => {
+    appliancesArray.forEach((item) => {
       const appliance = document.createElement("span");
       appliance.innerText = item;
+      appliance.classList.add("tags-options");
+      appliance.classList.add("appliance-option");
+      appliance.addEventListener("mousedown", (e) => {
+        const tagsContainer = document.querySelector(".tags-container");
+        const newTag = UI.createTag(
+          e.target.innerText,
+          "appliance-tag",
+          processTags,
+          updateAdvancedFilters
+        );
+        tagsContainer.appendChild(newTag);
+        const recipes = processTags();
+        updateAdvancedFilters();
+        UI.displayRecipes(recipes);
+      });
       appliancesContainer.appendChild(appliance);
     });
   }
 
-  static displayUstensils(array) {
+  static displayUstensils(ustensilsArray, processTags, updateAdvancedFilters) {
     // add ustensils to select options
     const ustensilsContainer = document.querySelector(
       ".ustensils-items-container"
     );
     ustensilsContainer.innerText = "";
 
-    array.forEach((item) => {
+    ustensilsArray.forEach((item) => {
       const ustensil = document.createElement("span");
       ustensil.innerText = item;
+      ustensil.classList.add("tags-options");
+      ustensil.classList.add("ustensil-option");
+      ustensil.addEventListener("mousedown", (e) => {
+        const tagsContainer = document.querySelector(".tags-container");
+        const newTag = UI.createTag(
+          e.target.innerText,
+          "ustensil-tag",
+          processTags,
+          updateAdvancedFilters
+        );
+        tagsContainer.appendChild(newTag);
+        const recipes = processTags();
+        updateAdvancedFilters();
+        UI.displayRecipes(recipes);
+      });
       ustensilsContainer.appendChild(ustensil);
     });
   }
@@ -100,12 +139,40 @@ export default class UI {
     return article;
   }
 
+  static createTag(text, bgClass, processTags, updateAdvancedFilters) {
+    const tag = document.createElement("div");
+    const tagWrapper = document.createElement("div");
+    const tagName = document.createElement("div");
+    const tagClose = document.createElement("div");
+    tag.classList.add("tag");
+    tagWrapper.classList.add("tag-wrapper");
+    tagName.classList.add("tag-name");
+    tagClose.classList.add("tag-close");
+    tagName.innerText = text;
+    tagClose.innerText = "x";
+    tagClose.addEventListener("click", (e) => {
+      console.log("click !");
+      e.target.parentElement.parentElement.remove();
+      const recipes = processTags();
+      updateAdvancedFilters();
+      UI.displayRecipes(recipes);
+    });
+    tagWrapper.appendChild(tagName);
+    tagWrapper.appendChild(tagClose);
+    tag.appendChild(tagWrapper);
+    tag.classList.add(bgClass);
+    return tag;
+  }
+
   static displayRecipes(array) {
+    const recipes = array
+      ? array
+      : JSON.parse(localStorage.getItem("recipes1"));
     const recipesSection = document.querySelector(".recipes-list");
     // Reset section
     recipesSection.innerText = "";
     // Fill section with provided array
-    array.forEach((recipe) =>
+    recipes.forEach((recipe) =>
       recipesSection.appendChild(UI.createRecipeCard(recipe))
     );
   }

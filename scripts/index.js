@@ -1,4 +1,10 @@
-import * as filters from "./advancedFilter.js";
+import {
+  mainFilter,
+  updateIngredientsField,
+  updateAppliancesField,
+  updateUstensilsField,
+  processTags,
+} from "./filters.js";
 import UI from "./ui.js";
 
 const getRecipes = async () => {
@@ -8,87 +14,102 @@ const getRecipes = async () => {
 
   const data = await res.json();
 
-  // Store data in Local Storage
-  if (localStorage.getItem("recipes") == null) {
-    localStorage.setItem("recipes", JSON.stringify(data));
-  }
+  localStorage.setItem("recipes1", JSON.stringify(data));
+  localStorage.setItem("recipes2", JSON.stringify(data));
+  localStorage.setItem("recipes3", JSON.stringify(data));
 
+  // return data
   return {
-    data: JSON.parse(localStorage.getItem("recipes")),
+    data: JSON.parse(localStorage.getItem("recipes1")),
   };
 };
 
+const updateAdvancedFilters = () => {
+  const recipes = JSON.parse(localStorage.getItem("recipes3"));
+  UI.displayIngredients(
+    updateIngredientsField(recipes),
+    processTags,
+    updateAdvancedFilters
+  );
+  UI.displayAppliances(
+    updateAppliancesField(recipes),
+    processTags,
+    updateAdvancedFilters
+  );
+  UI.displayUstensils(
+    updateUstensilsField(recipes),
+    processTags,
+    updateAdvancedFilters
+  );
+};
+
 async function init() {
-  // Fetch recipes from Local Storage - Array of Objects
+  // Display recipes stored in LS
   const { data } = await getRecipes();
   UI.displayRecipes(data);
 
-  // get main input field from DOM
-  const mainSearchInput = document.getElementById("main-search");
-
-  // get Advanced Filters input fields from DOM
-  const ingredientsSearchInput = document.getElementById("ingredients");
-  const appliancesSearchInput = document.getElementById("appliances");
-  const ustensilsSearchInput = document.getElementById("ustensils");
-
   // Fill Ingredients search options
-  const filteredIngredientsOptions = filters.updateIngredientsField(data);
-  const filteredAppliancesOptions = filters.updateAppliancesField(data);
-  const filteredUstensilsOptions = filters.updateUstensilsField(data);
-  console.log(filteredIngredientsOptions);
-  console.log(filteredAppliancesOptions);
-  console.log(filteredUstensilsOptions);
-  UI.displayIngredients(filteredIngredientsOptions);
-  UI.displayAppliances(filteredAppliancesOptions);
-  UI.displayUstensils(filteredUstensilsOptions);
+  updateAdvancedFilters();
 
   // Input search Event Listener
+  const mainSearchInput = document.getElementById("main-search");
   mainSearchInput.addEventListener("input", (e) => {
     const value = e.target.value.toString().toLowerCase();
-    // disable search if input is less than 3 characters
-    // and display all recipes
+
     if (value.length < 3) {
-      UI.displayRecipes(data);
-      const filteredIngredientsOptions = filters.updateIngredientsField(data);
-      const filteredAppliancesOptions = filters.updateAppliancesField(data);
-      const filteredUstensilsOptions = filters.updateUstensilsField(data);
-      UI.displayIngredients(filteredIngredientsOptions);
-      UI.displayAppliances(filteredAppliancesOptions);
-      UI.displayUstensils(filteredUstensilsOptions);
+      // display all recipes if input is less than 3 characters
+      const recipes = JSON.parse(localStorage.getItem("recipes1"));
+      localStorage.setItem("recipes2", JSON.stringify(recipes));
+      localStorage.setItem("recipes3", JSON.stringify(recipes));
+      UI.displayRecipes(recipes);
+      updateAdvancedFilters(recipes);
     } else {
-      // Input search Algo
-      const filteredRecipes = data.filter((recipe) => {
-        if (
-          recipe.name.toLowerCase().includes(value) ||
-          recipe.description.toLowerCase().includes(value) ||
-          recipe.ingredients.forEach((ingredient) =>
-            ingredient.ingredient.toLowerCase().includes(value)
-          )
-        ) {
-          //console.log(recipe.name);
-          return recipe;
-        }
-      });
-      console.log("------------- End --------------");
-      console.table(filteredRecipes);
-
+      // display all recipes matching input
+      const filteredRecipes = mainFilter(data, value);
       localStorage.setItem("recipes2", JSON.stringify(filteredRecipes));
+      localStorage.setItem("recipes3", JSON.stringify(filteredRecipes));
       UI.displayRecipes(filteredRecipes);
-
-      // Update options for Ingredient + Appliances + Ustensils
-      const filteredIngredientsOptions =
-        filters.updateIngredientsField(filteredRecipes);
-      const filteredAppliancesOptions =
-        filters.updateAppliancesField(filteredRecipes);
-      const filteredUstensilsOptions =
-        filters.updateUstensilsField(filteredRecipes);
-
-      // Update UI for Ingredient + Appliances + Ustensils options
-      console.log(filteredIngredientsOptions);
-      UI.displayIngredients(filteredIngredientsOptions);
-      UI.displayAppliances(filteredAppliancesOptions);
-      UI.displayUstensils(filteredUstensilsOptions);
+      updateAdvancedFilters(filteredRecipes);
     }
+  });
+
+  // Ingredients input Event Listener
+  const ingredientsSearchInput = document.getElementById("ingredients");
+  ingredientsSearchInput.addEventListener("input", (e) => {
+    const value = e.target.value.toString().toLowerCase();
+    // TODO : hide ingredients which don't match input
+    const options = document.querySelectorAll(".ingredient-option");
+    options.forEach((option) => {
+      !option.innerText.toLowerCase().includes(value)
+        ? option.classList.add("d-none")
+        : option.classList.remove("d-none");
+    });
+  });
+
+  // Appliances input Event Listener
+  const appliancesSearchInput = document.getElementById("appliances");
+  appliancesSearchInput.addEventListener("input", (e) => {
+    const value = e.target.value.toString().toLowerCase();
+    // TODO : hide appliances which don't match input
+    const options = document.querySelectorAll(".appliance-option");
+    options.forEach((option) => {
+      !option.innerText.toLowerCase().includes(value)
+        ? option.classList.add("d-none")
+        : option.classList.remove("d-none");
+    });
+  });
+
+  // Ustensils input Event Listener
+  const ustensilsSearchInput = document.getElementById("ustensils");
+  ustensilsSearchInput.addEventListener("input", (e) => {
+    const value = e.target.value.toString().toLowerCase();
+    // TODO : hide ustensils which don't match input
+    const options = document.querySelectorAll(".ustensil-option");
+    options.forEach((option) => {
+      !option.innerText.toLowerCase().includes(value)
+        ? option.classList.add("d-none")
+        : option.classList.remove("d-none");
+    });
   });
 }
 
