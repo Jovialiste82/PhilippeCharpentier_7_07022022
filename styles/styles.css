@@ -24,6 +24,10 @@ body {
   margin-top: 20px;
 }
 
+.mt-3 {
+  margin-top: 30px;
+}
+
 h1 {
   color: var(--title);
   line-height: 47px;
@@ -40,6 +44,54 @@ h1 {
 
 .d-none {
   display: none;
+}
+
+/* //////////////////////////////////
+////////////// Modale ///////////////
+////////////////////////////////// */
+
+.modale {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modale-msg {
+  width: 30vw;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+}
+
+.modale-msg h3 {
+  width: 25vw;
+}
+
+.ok-button {
+  width: 5vw;
+  height: 5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+}
+
+.ok-button:hover {
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 /* //////////////////////////////////
@@ -237,6 +289,7 @@ h1 {
 .recipes-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 50px;
 }
 
@@ -245,6 +298,13 @@ h1 {
   height: 364px;
   border-radius: var(--main-border-radius);
   background-color: var(--bg-light-gray-1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.recipe-card:hover {
+  /* -webkit-box-shadow: 4px 5px 13px 3px rgba(0, 0, 0, 0.27); */
+  box-shadow: 4px 5px 13px 3px rgba(0, 0, 0, 0.27);
+  transform: scale(1.01);
 }
 
 .card-img,
@@ -265,7 +325,19 @@ h1 {
 
 .card-text-body {
   padding: 5px 12px;
+  /* overflow-y: scroll; */
 }
+
+/* .card-text-body::-webkit-scrollbar {
+  width: 8px;
+} */
+
+/* .card-text-body::-webkit-scrollbar,
+.card-text-body::-webkit-scrollbar-thumb,
+.card-text-body::-webkit-scrollbar-track {
+  background: var(--bg-light-gray-2);
+  border-radius: var(--main-border-radius);
+} */
 
 .card-body-text-header {
   display: flex;
@@ -277,6 +349,19 @@ h1 {
 
 .card-bottom {
   display: flex;
+  max-height: 80px;
+  overflow-y: scroll;
+}
+
+.card-bottom::-webkit-scrollbar {
+  width: 0px;
+}
+
+.card-bottom::-webkit-scrollbar,
+.card-bottom::-webkit-scrollbar-thumb,
+.card-bottom::-webkit-scrollbar-track {
+  background: var(--bg-light-gray-2);
+  border-radius: var(--main-border-radius);
 }
 
 .ingredients,

@@ -5,17 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/styles.css" />
-    <script defer type="module" src="scripts/index.js"></script>
     <title>Les petits plats</title>
   </head>
   <body>
+    <div class="modale-container d-none">
+      <div class="modale">
+        <div class="modale-msg">
+          <h3>
+            « Aucune recette ne correspond à votre critère… vous pouvez chercher
+            « tarte aux pommes », « poisson », etc.
+          </h3>
+          <div class="ok-button">OK</div>
+        </div>
+      </div>
+    </div>
     <header class="main-header">
-      <!-- <img
-        src="assets/LesPetitsPlats4.png" 
-        alt="logo"
-        width="80"
-        style="color: #d04f4f"
-      /> -->
       <img
         src="https://res.cloudinary.com/dao8tng7z/image/upload/v1647725671/OC-P7-Assets/main-logo-les-petits-plats_omobhd.png"
         alt="logo"
@@ -31,14 +35,7 @@
           type="text"
           placeholder="Rechercher une recette"
         />
-        <div class="tags-container">
-          <!-- <div class="tag">
-            <div class="tag-wrapper">
-              <div class="tag-name">Coco</div>
-              <div class="tag-close">x</div>
-            </div>
-          </div> -->
-        </div>
+        <div class="tags-container"></div>
         <div class="filters-group-relative mt-2">
           <div class="filters-group">
             <div class="advanced-filters-container afc-ingredients">
@@ -60,7 +57,8 @@
           </div>
         </div>
       </section>
-      <section class="recipes-list mt-2"></section>
+      <section class="recipes-list mt-3"></section>
     </main>
+    <script type="module" src="scripts/index.js"></script>
   </body>
 </html>

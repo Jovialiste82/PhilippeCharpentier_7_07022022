@@ -70,6 +70,9 @@ async function init() {
       localStorage.setItem("recipes3", JSON.stringify(filteredRecipes));
       UI.displayRecipes(filteredRecipes);
       updateAdvancedFilters(filteredRecipes);
+      if (filteredRecipes.length == 0) {
+        UI.displayModale();
+      }
     }
   });
 

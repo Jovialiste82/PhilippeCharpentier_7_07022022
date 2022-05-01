@@ -125,7 +125,7 @@ export default class UI {
     header.appendChild(headerP);
     headerH2.innerText = object.name;
     headerP.innerText = `${object.time} mn`;
-    descriptionDiv.innerText = object.description;
+    descriptionDiv.innerText = `${object.description.substring(0, 130)}...`;
     const ingredientsArray = object.ingredients.map((ingredient) => {
       const ingredientBody = document.createElement("p");
       ingredientBody.innerHTML = `<span>${ingredient.ingredient}</span>${
@@ -175,5 +175,19 @@ export default class UI {
     recipes.forEach((recipe) =>
       recipesSection.appendChild(UI.createRecipeCard(recipe))
     );
+  }
+
+  static displayModale() {
+    const modaleContainer = document.querySelector(".modale-container");
+    const removeModale = document.querySelector(".ok-button");
+    modaleContainer.classList.remove("d-none");
+    removeModale.addEventListener("click", () => {
+      const mainSearchInput = document.getElementById("main-search");
+      mainSearchInput.value = "";
+      const recipes = JSON.parse(localStorage.getItem("recipes1"));
+      localStorage.setItem("recipes2", JSON.stringify(recipes));
+      UI.displayRecipes(recipes);
+      modaleContainer.classList.add("d-none");
+    });
   }
 }
